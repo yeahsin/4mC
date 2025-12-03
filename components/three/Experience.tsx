@@ -103,7 +103,7 @@ export const Experience: React.FC<ExperienceProps> = ({ view, setView, theme }) 
   const getPages = () => {
     switch (view) {
       case 'home': 
-        return isMobile ? 8.2 : 4.5; 
+        return isMobile ? 11.5 : 6.5; 
       case 'about': 
         return isMobile ? 2.6 : 2.1; 
       case 'services': 
@@ -113,6 +113,8 @@ export const Experience: React.FC<ExperienceProps> = ({ view, setView, theme }) 
         return isMobile ? 2.2 : 1.8; 
       case 'booking': 
         return isMobile ? 2.2 : 1.8; 
+      case 'doorstep':
+        return isMobile ? 3.0 : 2.4;
       default: 
         return isMobile ? 2.5 : 2.0;
     }

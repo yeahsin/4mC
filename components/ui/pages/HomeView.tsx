@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../Button';
@@ -137,7 +138,7 @@ export const HomeView: React.FC<{ onNavigate: (view: ViewType) => void }> = ({ o
              className="text-lg text-gray-600 dark:text-gray-400 max-w-md mb-8"
           >
             The on-demand detailing service for the obsessive. 
-            We bring the studio to your driveway.
+            <span className="text-teal font-medium"> Premium care at your doorstep.</span>
           </motion.p>
           <Button onClick={() => onNavigate('booking')}>Initiate Ritual</Button>
         </div>
@@ -176,6 +177,86 @@ export const HomeView: React.FC<{ onNavigate: (view: ViewType) => void }> = ({ o
         </div>
         <div className="mt-16">
           <Button variant="text" onClick={() => onNavigate('services')}>Explore Technical Specs</Button>
+        </div>
+      </Section>
+
+      {/* SCENE: DOORSTEP CONVENIENCE (NEW) */}
+      <Section className="items-center pointer-events-auto py-20 bg-white/50 dark:bg-black/20 backdrop-blur-sm my-10 border-y border-black/5 dark:border-white/5">
+        <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+           {/* Visual */}
+           <div className="order-2 md:order-1 flex justify-center relative">
+              <div className="w-64 h-64 md:w-96 md:h-96 rounded-full border border-teal/10 relative flex items-center justify-center">
+                  {/* Ripples */}
+                  {[1, 2, 3].map((i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute inset-0 border border-teal/20 rounded-full"
+                      initial={{ scale: 0.5, opacity: 0 }}
+                      animate={{ scale: 1.5, opacity: 0 }}
+                      transition={{ repeat: Infinity, duration: 3, delay: i * 0.8, ease: "easeOut" }}
+                    />
+                  ))}
+                  {/* Center Map Point */}
+                  <div className="absolute w-4 h-4 bg-teal rounded-full shadow-[0_0_20px_#00E5D2] z-10" />
+                  <div className="absolute w-32 h-32 bg-teal/5 rounded-full blur-xl" />
+                  
+                  {/* Orbiting Van Icons */}
+                  <motion.div 
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+                    className="absolute w-full h-full"
+                  >
+                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 w-8 h-8 bg-obsidian border border-gray-700 flex items-center justify-center rounded shadow-lg transform rotate-180">
+                        <div className="w-1 h-1 bg-gold rounded-full animate-pulse" />
+                     </div>
+                  </motion.div>
+                   <motion.div 
+                    animate={{ rotate: -360 }}
+                    transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                    className="absolute w-3/4 h-3/4"
+                  >
+                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-4 w-6 h-6 bg-obsidian border border-gray-700 flex items-center justify-center rounded shadow-lg">
+                         <div className="w-1 h-1 bg-teal rounded-full animate-pulse" />
+                     </div>
+                  </motion.div>
+              </div>
+           </div>
+
+           {/* Copy */}
+           <div className="order-1 md:order-2 text-left">
+              <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-900 dark:text-white">
+                The Studio <br/>
+                <span className="text-teal font-serif italic">Comes to You.</span>
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
+                Your driveway is our workspace. Our solar-powered vans arrive fully equipped with purified water, electricity, and the finest detailing compounds. 
+              </p>
+              
+              <div className="grid grid-cols-1 gap-6">
+                 <div className="flex gap-4">
+                    <div className="w-10 h-10 flex-shrink-0 bg-black/5 dark:bg-white/5 flex items-center justify-center text-gold text-xl">
+                      ⚡
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-1">Self-Sufficient</h4>
+                      <p className="text-xs text-gray-500">We carry our own water and power supply.</p>
+                    </div>
+                 </div>
+                 <div className="flex gap-4">
+                    <div className="w-10 h-10 flex-shrink-0 bg-black/5 dark:bg-white/5 flex items-center justify-center text-teal text-xl">
+                      📍
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold uppercase tracking-widest text-gray-900 dark:text-white mb-1">Any Location</h4>
+                      <p className="text-xs text-gray-500">Home, office, or underground parking.</p>
+                    </div>
+                 </div>
+              </div>
+
+              <div className="mt-10">
+                <Button variant="outline" onClick={() => onNavigate('doorstep')}>Learn More</Button>
+              </div>
+           </div>
         </div>
       </Section>
 

@@ -155,6 +155,7 @@ export const PACKAGES: ServicePackage[] = [
 export const NAV_LINKS: { name: string; id: ViewType }[] = [
   { name: "Ritual", id: 'home' },
   { name: "Services", id: 'services' },
+  { name: "Doorstep", id: 'doorstep' },
   { name: "About", id: 'about' },
   { name: "Contact", id: 'contact' },
   { name: "Book Now", id: 'booking' },

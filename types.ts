@@ -27,6 +27,6 @@ export interface ServicePackage {
   popular?: boolean;
 }
 
-export type ViewType = 'home' | 'about' | 'services' | 'contact' | 'booking';
+export type ViewType = 'home' | 'about' | 'services' | 'contact' | 'booking' | 'doorstep';
 
 export type Theme = 'dark' | 'light';

@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { HomeView } from './pages/HomeView';
 import { AboutView } from './pages/AboutView';
 import { ServicesView } from './pages/ServicesView';
 import { ContactView } from './pages/ContactView';
 import { BookingView } from './pages/BookingView';
+import { DoorstepView } from './pages/DoorstepView';
 import { Footer } from './Footer';
 import { ViewType } from '../../types';
 
@@ -20,6 +22,7 @@ export const Overlay: React.FC<OverlayProps> = ({ view, onNavigate }) => {
       case 'services': return <ServicesView />;
       case 'contact': return <ContactView />;
       case 'booking': return <BookingView />;
+      case 'doorstep': return <DoorstepView />;
       default: return <HomeView onNavigate={onNavigate} />;
     }
   };
